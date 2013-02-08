@@ -1,0 +1,51 @@
+Download PHP
+
+Download the latest source code from PHP Download page. Current stable release is 5.2.11. Move the source to /usr/local/src and extract is as shown below.
+
+#php -v //check version
+# bzip2 -d php-5.2.11.tar.bz2
+# tar xvf php-5.2.11.tar
+
+
+Install PHP
+
+View all configuration options available for PHP using ./configure –-help (two hyphen in front of help). The most commonly used option is –-prefix={install-dir-name} to install PHP on a user defined directory.
+
+# cd php-5.2.6
+# ./configure --with-apxs2=/usr/local/apache/bin/apxs --with-mysql --with-libdir=lib64
+#./configure' '--with-apxs2=/usr/local/apache/bin/apxs' '--with-mysql' '--with-libdir=lib64' '--enable-ftp' '--enable-wddx' '--with-zlib
+
+added the 
+ ftp,wddx,zlib extensions
+
+# make
+# make install
+
+
+configure file in
+
+/usr/local/apache/conf
+
+
+vi httd.conf file
+
+compare it with working conf file
+restart appache server  
+
+/usr/local/apache/bin
+./apachectl stop
+./apachectl start
+
+then 
+
+goto
+cd /usr/local/apache/htdocs/
+
+creat filename.php
+
+and add  <?php phpinfo() ?>
+
+save the file
+
+then check <ipaddress>/<filename.php> to check the file
+
